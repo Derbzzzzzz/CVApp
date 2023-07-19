@@ -3,7 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    height: 100%;
     width: 200px;
 }
+
+.list-group{
+    width: 150px;
+}
+
