@@ -1,4 +1,4 @@
-import "../styles/heading.css"
+import "../styles/Footer.css"
 import logo from "../assets/github-mark-black (1).png"
 function Footer() {
 

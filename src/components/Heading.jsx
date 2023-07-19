@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import "../styles/footer.css"
+import "../styles/Heading.css"
 
 function Heading() {
 
