@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Heading from './heading'
+import Footer from './footer'
 import "../styles/App.css"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <Heading/>
+      <Footer/>
     </>
   )
 }
