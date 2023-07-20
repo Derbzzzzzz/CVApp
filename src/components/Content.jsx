@@ -9,7 +9,7 @@ function Content() {
   return (
     <>
       <div className="content">
-          <SideBar state={state}/>
+          <SideBar state={state} stateChanger={setState}/>
           {/* FormSection */}
       </div>
     </>
