@@ -43,9 +43,12 @@ function Education(props) {
                 <h4><label className="required" htmlFor="degreeType">Degree Type</label></h4>
                 <select id="degreeType" className="form-control" defaultValue={data.degreeType} required>
                     <option label="-- Select An Option --" style={{display: 'none'}}></option>
+                    <option>{'High School or Equivalent'}</option>
+                    <option>{'Associates Degree'}</option>
                     <option>{'Bachelor of Science (BS)'}</option>
                     <option>{'Bachelor of Arts (BA)'}</option>
                     <option>{'Master (MS)'}</option>
+                    <option>{'Doctorate (PhD)'}</option>
                 </select>
             </div>
             <div className="form-group">
