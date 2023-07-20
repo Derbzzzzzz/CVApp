@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import SideBar from "./Sidebar"
 import General from "./General"
+import Education from "./Education"
 
 function Content() {
   const [state, setState] = useState(0)
@@ -11,7 +12,7 @@ function Content() {
     <>
       <div className="content">
           <SideBar state={state} stateChanger={setState}/>
-          <General/>
+          <Education/>
       </div>
     </>
   )

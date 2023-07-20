@@ -23,9 +23,9 @@ function General() {
             <div className="form-group">
                 <h4><label htmlFor="phone">Phone Number</label></h4>
                 <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control" id="email" placeholder="Phone Number" autoComplete="off" required/>
-                <small id="emailHelp" class="form-text text-muted">Format: XXX-XXX-XXXX</small>
+                <small id="emailHelp" className="form-text text-muted">Format: XXX-XXX-XXXX</small>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
     </>
