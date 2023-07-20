@@ -5,6 +5,7 @@ import SideBar from "./Sidebar"
 import General from "./General"
 import Education from "./Education"
 import Professional from "./Professional"
+import Submission from "./Submission"
 
 function createData(){
   return{
@@ -21,7 +22,7 @@ function createData(){
     position: null,
     workStartDate: null,
     workEndDate: null,
-    responsibilties: null
+    responsibilities: null
   }
 }
 
@@ -42,16 +43,18 @@ function loadPage(state, setState){
   else if(state.page === 2){
     return <Professional state={state} stateChanger={setState}/>
   }
+
+  return <Submission/>
 }
 
 function Content() {
-  const [state, setState] = useState(createInitialState(0))
+  const [state, setState] = useState(createInitialState())
 
   return (
     <>
       <div className="content">
-          <SideBar state={state} stateChanger={setState}/>
-          {loadPage(state, setState)}
+        {state.page !== 3 && <SideBar state={state} stateChanger={setState}/>}
+        {loadPage(state, setState)}
       </div>
     </>
   )

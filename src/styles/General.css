@@ -12,7 +12,7 @@ label{
     padding-top: 20px;
 }
 
-button{
+button[type="submit"]{
     position: absolute;
     bottom: 40px;
     right: 40px
