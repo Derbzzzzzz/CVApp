@@ -1,4 +1,4 @@
-import "../styles/General.css"
+import "../styles/Education.css"
 
 function Education() {
 
@@ -30,8 +30,8 @@ function Education() {
                     <input type="date" class="form-control" id="startDate" required/>
                 </div>
                 <div class="form-group col-md-6">
-                    <h4><label for="endDate">End Date</label></h4>
-                    <input type="date" class="form-control" id="endDate" required/>
+                    <h4><label htmlFor="endDate">End Date</label></h4>
+                    <input type="date" className="form-control" id="endDate"/>
                 </div>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>

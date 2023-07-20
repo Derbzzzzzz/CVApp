@@ -1,0 +1,19 @@
+.container{
+    padding: 40px;
+    position: relative;
+}
+
+.form-title{
+    padding-bottom: 20px;
+}
+
+label{
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+button{
+    position: absolute;
+    bottom: 40px;
+    right: 40px
+}
