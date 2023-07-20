@@ -6,22 +6,41 @@ import General from "./General"
 import Education from "./Education"
 import Professional from "./Professional"
 
-function createInitialState(page){
+function createData(){
   return{
-    page: page,
+    firstName: "Ryan",
+    lastName: "Wah",
+    email: "a@a",
+    phoneNumber: "777-777-7777",
+    college: null,
+    degreeType: null,
+    degreeField: null,
+    collegeStartDate: null,
+    collegeEndDate: null,
+    company: null,
+    position: null,
+    workStartDate: null,
+    workEndDate: null,
+    responsibilties: null
   }
 }
 
-function loadPage(state){
-  console.log(state.page)
+function createInitialState(){
+  return{
+    page: 0,
+    data: createData()
+  }
+}
+
+function loadPage(state, setState){
   if(state.page === 0){
-    return <General/>
+    return <General state={state} stateChanger={setState}/>
   }
   else if(state.page === 1){
-    return <Education/>
+    return <Education state={state} stateChanger={setState}/>
   }
   else if(state.page === 2){
-    return <Professional/>
+    return <Professional state={state} stateChanger={setState}/>
   }
 }
 
@@ -32,7 +51,7 @@ function Content() {
     <>
       <div className="content">
           <SideBar state={state} stateChanger={setState}/>
-          {loadPage(state)}
+          {loadPage(state, setState)}
       </div>
     </>
   )

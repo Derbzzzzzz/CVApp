@@ -1,18 +1,18 @@
 import "../styles/Sidebar.css"
 
 function addSections(items, state, stateChanger){
-    console.log(state.page)
     const elements = items.map((item, index) =>
-    <li key={item} className={state.page === index ? "list-group-item active" : "list-group-item"} onClick={() => stateChanger(createInitialState(index))}>{item}</li>
+    <li key={item} className={state.page === index ? "list-group-item active" : "list-group-item"} onClick={() => stateChanger(updatePage(index, state))}>{item}</li>
     );
 
     return elements
 }
 
-function createInitialState(page){
-    return{
-      page: page,
-    }
+function updatePage(page, state){
+    let stateClone = JSON.parse(JSON.stringify(state));
+    stateClone.page = page
+
+    return stateClone
 }
 
 function SideBar(props) {

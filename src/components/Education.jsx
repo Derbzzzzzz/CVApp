@@ -24,12 +24,12 @@ function Education() {
                 <h4><label htmlFor="degreeField">Degree Field</label></h4>
                 <input type="text" className="form-control" id="degreeField" placeholder="Degree Field" autoComplete="off" required/>
             </div>
-            <div class="row">
-                <div class="form-group col-md-6">
-                    <h4><label for="startDate">Start Date</label></h4>
-                    <input type="date" class="form-control" id="startDate" required/>
+            <div className="row">
+                <div className="form-group col-md-6">
+                    <h4><label htmlFor="startDate">Start Date</label></h4>
+                    <input type="date" className="form-control" id="startDate" required/>
                 </div>
-                <div class="form-group col-md-6">
+                <div className="form-group col-md-6">
                     <h4><label htmlFor="endDate">End Date</label></h4>
                     <input type="date" className="form-control" id="endDate"/>
                 </div>
