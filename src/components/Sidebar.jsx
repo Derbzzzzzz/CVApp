@@ -1,20 +1,25 @@
-import { useState } from 'react'
 import "../styles/Sidebar.css"
 
-function SideBar() {
-    const [active, setActive] = useState(0)
+function addSections(items, active){
+    const elements = items.map((item, index) =>
+    <li className={active === index ? "list-group-item active" : "list-group-item"}>{item}</li>
+    );
 
-  return (
-    <>
-      <div className="sidebar">
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item">General Info</li>
-        <li className="list-group-item">Educational Experience</li>
-        <li className="list-group-item">Professional Experience</li>
-      </ul>
-      </div>
-    </>
-  )
+    return elements
+}
+
+function SideBar(props) {
+    const items = ["General Info", "Educational Experience", "Professional Experience"]
+
+    return (
+        <>
+            <div className="sidebar">
+            <ul className="list-group list-group-flush">
+                {addSections(items, props.state)}
+            </ul>
+            </div>
+        </>
+    )
 }
 
 export default SideBar

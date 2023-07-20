@@ -10,3 +10,7 @@
     width: 150px;
 }
 
+.list-group-item{
+    cursor: pointer;
+}
+
