@@ -61,7 +61,7 @@ function Professional(props) {
             </div>
             <div className="form-group">
                 <h4><label className="required" htmlFor="responsibilities">Responsibilities</label></h4>
-                <textarea className="form-control" id="responsibilities" rows="3" defaultValue={data.responsibilities} required></textarea>
+                <textarea className="form-control" id="responsibilities" rows="2" defaultValue={data.responsibilities} required></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary">Submit Application</button>
