@@ -8,10 +8,10 @@ import Professional from "./Professional"
 
 function createData(){
   return{
-    firstName: "Ryan",
-    lastName: "Wah",
-    email: "a@a",
-    phoneNumber: "777-777-7777",
+    firstName: null,
+    lastName: null,
+    email: null,
+    phoneNumber: null,
     college: null,
     degreeType: null,
     degreeField: null,

@@ -17,3 +17,9 @@ button{
     bottom: 40px;
     right: 40px
 }
+
+.required:after {
+    content:" *";
+    font-size: 20px;
+    color: red;
+}
