@@ -48,7 +48,7 @@ function General(props) {
             </div>
             <div className="form-group">
                 <h4><label className="required" htmlFor="phone">Phone Number</label></h4>
-                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control" id="phoneNumber" placeholder="Phone Number" defaultValue={data.phoneNumber} autoComplete="off" required/>
+                <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control" id="phoneNumber" placeholder="Phone Number" defaultValue={data.phoneNumber} autoComplete="off" required/>
                 <small id="emailHelp" className="form-text text-muted">Format: XXX-XXX-XXXX</small>
             </div>
 
