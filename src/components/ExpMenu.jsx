@@ -1,5 +1,5 @@
 import "../styles/ExpMenu.css"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Professional from "./Professional";
 
 function formSubmit(e, props){
@@ -55,9 +55,11 @@ function createEditExpCards(props, setExp){
 
 function ExpMenu(props) {
 
-    const [currExp, setExp] = useState(-1)
+    let [currExp, setExp] = useState(-1)
 
-    console.log(currExp)
+    useEffect(()=>{
+        setExp(-1);
+      },[props.state])
 
     if(currExp === -1){
         return (
@@ -66,6 +68,7 @@ function ExpMenu(props) {
                     <div className="card-container">
                         {createEditExpCards(props, setExp)}
                     </div>
+                    <button onClick={() => setExp(-2)} className="btn btn-success">Add Experience</button>
                     <button type="submit" onClick={(e) => formSubmit(e, props)} className="btn btn-primary">Submit Application</button>
                     <button
                       onClick={(event) => back(event, props)}

@@ -1,4 +1,12 @@
+.card{
+    margin-bottom: 10px;
+}
+
 .card-body{
     display: flex;
     justify-content: space-between;
+}
+
+.btn-success{
+    margin-top: 10px;
 }

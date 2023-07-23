@@ -9,30 +9,33 @@ function formSubmit(e, props) {
 
   let org = document.getElementById("org");
   let position = document.getElementById("position");
-  let workStartDate = document.getElementById("workStartDate");
-  let workEndDate = document.getElementById("workEndDate");
+  let startDate = document.getElementById("workStartDate");
+  let endDate = document.getElementById("workEndDate");
   let responsibilities = document.getElementById("responsibilities");
 
   let newData = stateClone.data;
-  newData.addExp(org, position, startDate, endDate, responsibilities);
 
-  if (newData.firstName == null) {
-    stateClone.page = 0;
-  } else if (newData.college == null) {
-    stateClone.page = 1;
-  } else {
-    stateClone.page = 3;
-  }
+  newData.addExp = state.data.addExp
+
+  newData.addExp("Work", org.value, position.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
+
+  // if (newData.firstName == null) {
+  //   stateClone.page = 0;
+  // } else if (newData.college == null) {
+  //   stateClone.page = 1;
+  // } else {
+  //   stateClone.page = 3;
+  // }
 
   props.stateChanger(stateClone);
 }
 
 function Professional(props) {
 
-  console.log(props)
   let data = props.state.data;
 
   let i = props.currExp
+
 
   return (
     <>
@@ -88,7 +91,7 @@ function Professional(props) {
             </div>
             <div className="form-group col-md-6">
               <h4>
-                <label htmlFor="endDate">End Date</label>
+                <label htmlFor="endDate">End Date (Optional)</label>
               </h4>
               <input
                 type="date"
@@ -108,13 +111,13 @@ function Professional(props) {
               className="form-control"
               id="responsibilities"
               rows="2"
-              defaultValue={i >= 0 ? data.experiences[i].org : null}
+              defaultValue={i >= 0 ? data.experiences[i].responsibilities : null}
               required
             ></textarea>
           </div>
 
           <button type="submit" className="btn btn-primary">
-            Submit Application
+            Save
           </button>
         </form>
         <button

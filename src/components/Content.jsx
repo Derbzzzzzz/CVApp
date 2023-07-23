@@ -29,7 +29,7 @@ function createData(){
         endDate: null,
         responsibilities: "Worked",
     }],
-    addExp(expType, org, position, startDate, endDate, responsibilities){
+    addExp(expType, org, position, startDate, endDate, responsibilities, index = -1){
       let exp = {
         expType: expType,
         org: org,
@@ -39,7 +39,12 @@ function createData(){
         responsibilities: responsibilities,
       }
 
-      this.experiences.append(exp)
+      if(index <= -1){
+        this.experiences.push(exp)
+      }
+      else{
+        this.experiences[index] = exp
+      }
     }
   }
 }
@@ -69,8 +74,6 @@ function loadPage(state, setState){
 
 function Content() {
   const [state, setState] = useState(createInitialState())
-
-  console.log(state)
 
   return (
     <>
