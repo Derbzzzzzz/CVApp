@@ -4,31 +4,41 @@ import { useState } from 'react'
 import SideBar from "./Sidebar"
 import General from "./General"
 import Education from "./Education"
+import ExpMenu from "./ExpMenu"
 import Professional from "./Professional"
 import Submission from "./Submission"
+
 
 function createData(){
   return{
     firstName: "Ryan",
     lastName: "Wahle",
+    name: "Ryan Wahle",
     email: "ryanwahle7@gmail.com",
     phoneNumber: "314-882-8066",
-    college: null,
-    degreeType: null,
-    degreeField: null,
-    collegeStartDate: null,
-    collegeEndDate: null,
-    company: null,
-    position: null,
-    workStartDate: null,
-    workEndDate: null,
-    responsibilities: null
+    college: "University of Missouri",
+    degreeType: "Bachelor of Science (BS)",
+    degreeField: "Computer Science",
+    collegeStartDate: '2013-07-07',
+    collegeEndDate: '2018-09-09',
+    experiences: [],
+    addExp(org, position, startDate, endDate, responsibilities){
+      let exp = {
+        org: org,
+        position: position,
+        startDate: startDate,
+        endDate: endDate,
+        responsibilities: responsibilities,
+      }
+
+      this.experiences.append(exp)
+    }
   }
 }
 
 function createInitialState(){
   return{
-    page: 3,
+    page: 0,
     data: createData()
   }
 }
@@ -41,7 +51,7 @@ function loadPage(state, setState){
     return <Education state={state} stateChanger={setState}/>
   }
   else if(state.page === 2){
-    return <Professional state={state} stateChanger={setState}/>
+    return <ExpMenu state={state} stateChanger={setState}/>
   }
   else if(state.page === 3){
     return <Submission state={state} stateChanger={setState}/>
@@ -51,6 +61,8 @@ function loadPage(state, setState){
 
 function Content() {
   const [state, setState] = useState(createInitialState())
+
+  console.log(state)
 
   return (
     <>

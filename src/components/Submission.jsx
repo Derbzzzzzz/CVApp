@@ -3,7 +3,6 @@ import generateWordDocument from "./Word.js"
 
 function Submission(props) {
   // Default export is a4 paper, portrait, using millimeters for units
-
   return (
     <>
       <div className="submission">

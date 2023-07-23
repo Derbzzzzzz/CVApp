@@ -3,3 +3,15 @@
     flex-grow: 1;
     min-height: 720px;
 }
+
+button[type="submit"]{
+    position: absolute;
+    bottom: 40px;
+    right: 40px
+}
+
+.back{
+    position: absolute;
+    bottom: 40px;
+    left: 40px
+}

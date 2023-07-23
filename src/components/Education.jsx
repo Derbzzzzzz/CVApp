@@ -26,6 +26,17 @@ function formSubmit(e, props){
 
 }
 
+function back(event, props){
+  
+  let state = props.state
+
+  let stateClone = JSON.parse(JSON.stringify(state));
+
+  stateClone.page = 0
+
+  props.stateChanger(stateClone)
+}
+
 function Education(props) {
 
   let data = props.state.data
@@ -61,12 +72,18 @@ function Education(props) {
                     <input type="date" className="form-control" id="startDate" defaultValue={data.collegeStartDate} required/>
                 </div>
                 <div className="form-group col-md-6">
-                    <h4><label htmlFor="endDate">End Date</label></h4>
-                    <input type="date" className="form-control" id="endDate" defaultValue={data.collegeEndDate}/>
+                    <h4><label className="required" htmlFor="endDate">End Date (Expected)</label></h4>
+                    <input type="date" className="form-control" id="endDate" defaultValue={data.collegeEndDate} required/>
                 </div>
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
+        <button
+              onClick={(event) => back(event, props)}
+              className="back btn btn-secondary"
+            >
+              Back
+          </button>
       </div>
     </>
   )

@@ -3,28 +3,35 @@ import Docxtemplater from "docxtemplater";
 import PizZip from "pizzip";
 import { saveAs } from "file-saver";
 
-function loadFile(url, callback) {
-    PizZipUtils.getBinaryContent(url, callback);
-}
-
 
 async function generateWordDocument(event, props){
+    console.log(props)
     try {
-        let response = await fetch("./src/assets/tag-example.docx");
-        let data = await response.arrayBuffer();
-        let zip = PizZip(data);
+        let response = await fetch("./src/assets/template.docx");
+        let tempData = await response.arrayBuffer();
+        let zip = PizZip(tempData);
 
         const doc = new Docxtemplater(zip, {
             paragraphLoop: true,
             linebreaks: true,
         })
 
-        doc.render({
-            first_name: "John",
-            last_name: "Doe",
-            phone: "0652455478",
-            description: "New Website",
-        })
+        let data = props.state.data
+
+        
+
+        let templateData = {
+            "name": data.name,
+            "email": data.email,
+            "phoneNumber": data.phoneNumber,
+
+        }
+
+
+
+        doc.render(templateData)
+
+
         const blob = doc.getZip().generate({
             type: "blob",
             mimeType:

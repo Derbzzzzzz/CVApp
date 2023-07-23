@@ -15,6 +15,7 @@ function formSubmit(e, props){
   let newData = stateClone.data
   newData.firstName = fNameInput.value
   newData.lastName = lNameInput.value
+  newData.name = fNameInput.value + " " + lNameInput.value
   newData.email = email.value
   newData.phoneNumber = phoneNumber.value
 
