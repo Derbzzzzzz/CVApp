@@ -9,10 +9,10 @@ import Submission from "./Submission"
 
 function createData(){
   return{
-    firstName: null,
-    lastName: null,
-    email: null,
-    phoneNumber: null,
+    firstName: "Ryan",
+    lastName: "Wahle",
+    email: "ryanwahle7@gmail.com",
+    phoneNumber: "314-882-8066",
     college: null,
     degreeType: null,
     degreeField: null,
@@ -28,7 +28,7 @@ function createData(){
 
 function createInitialState(){
   return{
-    page: 0,
+    page: 3,
     data: createData()
   }
 }
@@ -43,8 +43,10 @@ function loadPage(state, setState){
   else if(state.page === 2){
     return <Professional state={state} stateChanger={setState}/>
   }
-
-  return <Submission/>
+  else if(state.page === 3){
+    return <Submission state={state} stateChanger={setState}/>
+  }
+  
 }
 
 function Content() {
