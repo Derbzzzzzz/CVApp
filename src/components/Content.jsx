@@ -21,9 +21,17 @@ function createData(){
     degreeField: "Computer Science",
     collegeStartDate: '2013-07-07',
     collegeEndDate: '2018-09-09',
-    experiences: [],
-    addExp(org, position, startDate, endDate, responsibilities){
+    experiences: [{
+        expType: "Work Experience",
+        org: "Career Center",
+        position: "Specialist",
+        startDate: "2022-07-07",
+        endDate: null,
+        responsibilities: "Worked",
+    }],
+    addExp(expType, org, position, startDate, endDate, responsibilities){
       let exp = {
+        expType: expType,
         org: org,
         position: position,
         startDate: startDate,
@@ -38,7 +46,7 @@ function createData(){
 
 function createInitialState(){
   return{
-    page: 0,
+    page: 2,
     data: createData()
   }
 }

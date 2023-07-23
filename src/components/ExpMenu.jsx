@@ -6,6 +6,8 @@ function formSubmit(e, props){
     let state = props.state
   
     let stateClone = JSON.parse(JSON.stringify(state));
+
+    let newData = stateClone.data
   
     if(newData.firstName == null){
       stateClone.page = 0
@@ -28,19 +30,36 @@ function back(event, props){
     stateClone.page = 1
   
     props.stateChanger(stateClone)
-  }
+}
+
+function createEditExpCards(props){
+
+    let experiences = props.state.data.experiences
+
+    const expItems = experiences.map((exp, index) => 
+            <div key={index} className="card">
+                <h5 key={index + "card-header"} className="card-header">{exp.expType}</h5>
+                <div key={index + "card-body"} className="card-body">
+                    <h5 key={index + "card-title"} className="card-title">{exp.position + ": " + exp.org}</h5>
+                    <a key={index + "card-btn"} href="#" className="btn btn-light">Edit</a>
+                </div>
+            </div>
+    )
+
+    return expItems
+}
+
+
 
 function ExpMenu(props) {
-
-  let data = props.state.data
-
-  let i = -1
 
   return (
     <>
         <div className="container">
-            
-            <button type="submit" className="btn btn-primary">Submit Application</button>
+            <div className="card-container">
+                {createEditExpCards(props)}
+            </div>
+            <button type="submit" onClick={(e) => formSubmit(e, props)} className="btn btn-primary">Submit Application</button>
             <button
               onClick={(event) => back(event, props)}
               className="back btn btn-secondary"
