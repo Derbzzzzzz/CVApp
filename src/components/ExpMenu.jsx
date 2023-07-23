@@ -1,4 +1,6 @@
 import "../styles/ExpMenu.css"
+import { useState } from 'react'
+import Professional from "./Professional";
 
 function formSubmit(e, props){
     e.preventDefault();
@@ -32,7 +34,7 @@ function back(event, props){
     props.stateChanger(stateClone)
 }
 
-function createEditExpCards(props){
+function createEditExpCards(props, setExp){
 
     let experiences = props.state.data.experiences
 
@@ -41,7 +43,7 @@ function createEditExpCards(props){
                 <h5 key={index + "card-header"} className="card-header">{exp.expType}</h5>
                 <div key={index + "card-body"} className="card-body">
                     <h5 key={index + "card-title"} className="card-title">{exp.position + ": " + exp.org}</h5>
-                    <a key={index + "card-btn"} href="#" className="btn btn-light">Edit</a>
+                    <a key={index + "card-btn"} onClick={() => setExp(index)} href="#" className="btn btn-light">Edit</a>
                 </div>
             </div>
     )
@@ -53,22 +55,38 @@ function createEditExpCards(props){
 
 function ExpMenu(props) {
 
-  return (
-    <>
-        <div className="container">
-            <div className="card-container">
-                {createEditExpCards(props)}
-            </div>
-            <button type="submit" onClick={(e) => formSubmit(e, props)} className="btn btn-primary">Submit Application</button>
-            <button
-              onClick={(event) => back(event, props)}
-              className="back btn btn-secondary"
-            >
-              Back
-          </button>
-        </div>
-    </>
-  )
+    const [currExp, setExp] = useState(-1)
+
+    console.log(currExp)
+
+    if(currExp === -1){
+        return (
+            <>
+                <div className="container">
+                    <div className="card-container">
+                        {createEditExpCards(props, setExp)}
+                    </div>
+                    <button type="submit" onClick={(e) => formSubmit(e, props)} className="btn btn-primary">Submit Application</button>
+                    <button
+                      onClick={(event) => back(event, props)}
+                      className="back btn btn-secondary"
+                    >
+                      Back
+                  </button>
+                </div>
+            </>
+          )
+    }
+
+    else{
+        return(
+            <>
+                <Professional state={props.state} stateChanger={props.stateChanger} currExp = {currExp} setExp = {setExp}/>
+            </>
+        )
+    }
+
+
 }
 
 export default ExpMenu
