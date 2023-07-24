@@ -3,10 +3,24 @@ import Docxtemplater from "docxtemplater";
 import PizZip from "pizzip";
 import { saveAs } from "file-saver";
 import expressionParser from "docxtemplater/expressions.js"
+import moment from "moment"
+
+function formatDate(date){
+    console.log(date)
+    let newDate = date.replaceAll("-", "")
+
+    newDate = moment(date, "YYYYMMDD")
+
+    newDate = newDate.format("MMM YYYY")
+
+    console.log(newDate)
+
+    return newDate
+}
 
 
 async function generateWordDocument(event, props){
-    console.log(props)
+
     try {
         let response = await fetch("./src/assets/template.docx");
         let tempData = await response.arrayBuffer();
@@ -20,11 +34,7 @@ async function generateWordDocument(event, props){
 
         let data = props.state.data
 
-        let degree;
-
-        if(data.degreeType == ""){
-
-        }
+        formatDate(data.schoolEndDate)
 
         
 
@@ -35,7 +45,8 @@ async function generateWordDocument(event, props){
             "degreeType": data.degreeType,
             "degreeField": data.degreeField,
             "school": data.school,
-            "schoolEndDate": data.schoolEndDate
+            "schoolEndDate": formatDate(data.schoolEndDate),
+            "gpa": data.gpa,
 
         }
 

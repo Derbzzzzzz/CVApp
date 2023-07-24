@@ -21,6 +21,7 @@ function createData(){
     degreeField: "Computer Science",
     schoolStartDate: '2013-07-07',
     schoolEndDate: '2018-09-09',
+    gpa: "3.7/4.0",
     experiences: [{
         expType: "Work",
         org: "Career Center",
