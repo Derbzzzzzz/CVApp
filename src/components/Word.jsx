@@ -6,16 +6,58 @@ import expressionParser from "docxtemplater/expressions.js"
 import moment from "moment"
 
 function formatDate(date){
-    console.log(date)
+
     let newDate = date.replaceAll("-", "")
 
     newDate = moment(date, "YYYYMMDD")
 
     newDate = newDate.format("MMM YYYY")
 
-    console.log(newDate)
-
     return newDate
+}
+
+function updateDates(array){
+    for (let i = 0; i < array.length; i++) {
+        array[i].startDate = formatDate(array[i].startDate)
+        if(array[i].endDate != null){
+            array[i].endDate = formatDate(array[i].endDate)
+        }
+    }
+
+    return array
+}
+
+function findWork(experiences){
+    let ret = []
+    for (let i = 0; i < experiences.length; i++) {
+        if(experiences[i].expType == "Work"){
+            ret.push(JSON.parse(JSON.stringify(experiences[i])))
+        }
+    }
+
+    return updateDates(ret)
+}
+
+function findVolunteer(experiences){
+    let ret = []
+    for (let i = 0; i < experiences.length; i++) {
+        if(experiences[i].expType == "Volunteering/Service"){
+            ret.push(JSON.parse(JSON.stringify(experiences[i])))
+        }
+    }
+
+    return updateDates(ret)
+}
+
+function findExtra(experiences){
+    let ret = []
+    for (let i = 0; i < experiences.length; i++) {
+        if(experiences[i].expType == "Extracurricular"){
+            ret.push(JSON.parse(JSON.stringify(experiences[i])))
+        }
+    }
+
+    return updateDates(ret)
 }
 
 
@@ -34,19 +76,24 @@ async function generateWordDocument(event, props){
 
         let data = props.state.data
 
-        formatDate(data.schoolEndDate)
+        let ret = findWork(data.experiences)
+
+        
 
         
 
         let templateData = {
-            "name": data.name,
-            "email": data.email,
-            "phoneNumber": data.phoneNumber,
-            "degreeType": data.degreeType,
-            "degreeField": data.degreeField,
-            "school": data.school,
-            "schoolEndDate": formatDate(data.schoolEndDate),
-            "gpa": data.gpa,
+            name: data.name,
+            email: data.email,
+            phoneNumber: data.phoneNumber,
+            degreeType: data.degreeType,
+            degreeField: data.degreeField,
+            school: data.school,
+            schoolEndDate: formatDate(data.schoolEndDate),
+            gpa: data.gpa,
+            work: findWork(data.experiences),
+            volunteer: findVolunteer(data.experiences),
+            extra: findExtra(data.experiences)
 
         }
 

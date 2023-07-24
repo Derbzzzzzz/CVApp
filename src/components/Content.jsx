@@ -27,7 +27,7 @@ function createData(){
         org: "Career Center",
         position: "Specialist",
         startDate: "2022-07-07",
-        endDate: null,
+        endDate: "2023-01-01",
         responsibilities: "Worked",
     }, {
         expType: "Volunteering/Service",
