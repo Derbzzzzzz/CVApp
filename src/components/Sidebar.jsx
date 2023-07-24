@@ -16,7 +16,7 @@ function updatePage(page, state){
 }
 
 function SideBar(props) {
-    const items = ["General Info", "Educational Experience", "Professional Experience"]
+    const items = ["General Info", "Education", "Additional Experiences"]
 
     return (
         <>

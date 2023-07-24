@@ -1,5 +1,5 @@
 import "../styles/Submission.css";
-import generateWordDocument from "./Word.js"
+import generateWordDocument from "./Word.jsx"
 
 function Submission(props) {
   // Default export is a4 paper, portrait, using millimeters for units

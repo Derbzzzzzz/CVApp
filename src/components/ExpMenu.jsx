@@ -13,7 +13,7 @@ function formSubmit(e, props){
   
     if(newData.firstName == null){
       stateClone.page = 0
-    } else if(newData.college == null){
+    } else if(newData.school == null){
       stateClone.page = 1
     } else{
       stateClone.page = 3
@@ -40,7 +40,7 @@ function createEditExpCards(props, setExp){
 
     const expItems = experiences.map((exp, index) => 
             <div key={index} className="card">
-                <h5 key={index + "card-header"} className="card-header">{exp.expType}</h5>
+                <h5 key={index + "card-header"} className="card-header">{exp.expType + " Experience"}</h5>
                 <div key={index + "card-body"} className="card-body">
                     <h5 key={index + "card-title"} className="card-title">{exp.position + ": " + exp.org}</h5>
                     <a key={index + "card-btn"} onClick={() => setExp(index)} href="#" className="btn btn-light">Edit</a>

@@ -7,6 +7,7 @@ function formSubmit(e, props) {
 
   let stateClone = JSON.parse(JSON.stringify(state));
 
+  let expType = document.getElementById("expType")
   let org = document.getElementById("org");
   let position = document.getElementById("position");
   let startDate = document.getElementById("workStartDate");
@@ -17,7 +18,7 @@ function formSubmit(e, props) {
 
   newData.addExp = state.data.addExp
 
-  newData.addExp("Work", org.value, position.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
+  newData.addExp(expType.value, org.value, position.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
 
   // if (newData.firstName == null) {
   //   stateClone.page = 0;
@@ -42,6 +43,15 @@ function Professional(props) {
       <div className="container">
         <h2 className="form-title">Professional Experience</h2>
         <form onSubmit={(e) => formSubmit(e, props)}>
+        <div className="form-group">
+                <h4><label className="required" htmlFor="expType">Experience Type</label></h4>
+                <select id="expType" className="form-control" defaultValue={i >= 0 ? data.experiences[i].expType : null} required>
+                    <option label="-- Select An Option --" style={{display: 'none'}}></option>
+                    <option>{'Work'}</option>
+                    <option>{'Volunteering/Service'}</option>
+                    <option>{'Extracurricular'}</option>
+                </select>
+            </div>
           <div className="form-group">
             <h4>
               <label className="required" htmlFor="org">

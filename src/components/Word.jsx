@@ -2,6 +2,7 @@ import "../styles/Test.css";
 import Docxtemplater from "docxtemplater";
 import PizZip from "pizzip";
 import { saveAs } from "file-saver";
+import expressionParser from "docxtemplater/expressions.js"
 
 
 async function generateWordDocument(event, props){
@@ -14,9 +15,16 @@ async function generateWordDocument(event, props){
         const doc = new Docxtemplater(zip, {
             paragraphLoop: true,
             linebreaks: true,
+            parser: expressionParser
         })
 
         let data = props.state.data
+
+        let degree;
+
+        if(data.degreeType == ""){
+
+        }
 
         
 
@@ -24,6 +32,10 @@ async function generateWordDocument(event, props){
             "name": data.name,
             "email": data.email,
             "phoneNumber": data.phoneNumber,
+            "degreeType": data.degreeType,
+            "degreeField": data.degreeField,
+            "school": data.school,
+            "schoolEndDate": data.schoolEndDate
 
         }
 
