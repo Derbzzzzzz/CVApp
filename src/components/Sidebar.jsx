@@ -12,6 +12,12 @@ function updatePage(page, state){
     let stateClone = JSON.parse(JSON.stringify(state));
     stateClone.page = page
 
+    let newData = stateClone.data
+
+    newData.addExp = state.data.addExp
+
+
+
     return stateClone
 }
 

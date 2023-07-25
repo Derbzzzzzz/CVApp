@@ -18,12 +18,12 @@ function formSubmit(e, props){
 
   newData.addExp = state.data.addExp
 
-
   newData.school = school.value
   newData.degreeType = degreeType.value
   newData.degreeField = degreeField.value
   newData.schoolStartDate = startDate.value
   newData.schoolEndDate = endDate.value
+  newData.gpa = gpa.value
 
   stateClone.page = 2
 
@@ -79,11 +79,11 @@ function Education(props) {
             </div>
             <div className="form-group">
                 <h4><label htmlFor="degreeField">Degree Field (Optional)</label></h4>
-                <input type="text" className="form-control" id="degreeField" placeholder="Degree Field" defaultValue={data.degreeField} autoComplete="off"/>
+                <input type="text" className="form-control" id="degreeField" placeholder="Ex: Computer Science" defaultValue={data.degreeField} autoComplete="off"/>
             </div>
             <div className="form-group">
-                <h4><label htmlFor="gpa">GPA</label></h4>
-                <input type="text" className="form-control" id="gpa" placeholder="Ex: 3.2/4.0" defaultValue={data.gpa} autoComplete="off" required/>
+                <h4><label htmlFor="gpa">GPA (Optional)</label></h4>
+                <input type="text" className="form-control" id="gpa" placeholder="Ex: 3.2/4.0" defaultValue={data.gpa} autoComplete="off"/>
             </div>
             <div className="row">
                 <div className="form-group col-md-6">
