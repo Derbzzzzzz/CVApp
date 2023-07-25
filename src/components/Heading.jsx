@@ -6,7 +6,7 @@ function Heading() {
   return (
     <>
       <div className="heading">
-          <h1 className="headingTitle">CV Application</h1>
+          <h1 className="headingTitle">Resume/CV Generator</h1>
       </div>
     </>
   )

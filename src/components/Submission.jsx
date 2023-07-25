@@ -22,18 +22,18 @@ function Submission(props) {
   return (
     <>
       <div className="submission">
-        <h1 className="submissionMessage">Application Complete</h1>
-        <button
-          onClick={(e) => back(e, props)}
-          className="redo btn btn-primary btn-lg"
-        >
-          Edit Application
-        </button>
+        <h1 className="submissionMessage">Generation Complete</h1>
         <button
           onClick={(event) => generateWordDocument(event, props)}
           className="redo btn btn-secondary btn-lg"
         >
           Download
+        </button>
+        <button
+          onClick={(e) => back(e, props)}
+          className="redo btn btn-primary btn-lg"
+        >
+          Edit Application
         </button>
       </div>
     </>
