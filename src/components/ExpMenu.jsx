@@ -91,7 +91,7 @@ function ExpMenu(props) {
                     <div className="card-container">
                         {createEditExpCards(props, setExp)}
                     </div>
-                    <button onClick={() => setExp(-2)} className="btn btn-success">Add Experience</button>
+                    <div className="addExpContainer"><button onClick={() => setExp(-2)} className="btn btn-success">Add Experience</button></div>
                     <button type="submit" onClick={(e) => formSubmit(e, props)} className="btn btn-primary">Submit Application</button>
                     <button
                       onClick={(event) => back(event, props)}
