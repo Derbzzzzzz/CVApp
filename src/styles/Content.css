@@ -19,7 +19,7 @@ label{
     font-size: 18px;
 }
 
-.btn-light{
+.btn-light, .btn-danger{
     display: flex;
     justify-content: center;
     align-items: center;

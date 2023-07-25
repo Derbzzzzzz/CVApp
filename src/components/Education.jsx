@@ -37,6 +37,10 @@ function back(event, props){
 
   let stateClone = JSON.parse(JSON.stringify(state));
 
+  let newData = stateClone.data
+
+  newData.addExp = state.data.addExp
+
   stateClone.page = 0
 
   props.stateChanger(stateClone)

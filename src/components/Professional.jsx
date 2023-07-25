@@ -17,8 +17,6 @@ function formSubmit(e, props) {
 
   let newData = stateClone.data;
 
-  console.log(state.data)
-
   newData.addExp = state.data.addExp
 
   newData.addExp(expType.value, org.value, position.value, location.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
@@ -54,7 +52,7 @@ function Professional(props) {
               </label>
             </h4>
             <input
-              type="text"
+              type="org"
               className="form-control"
               id="org"
               placeholder="Company/Organization Name"
@@ -120,7 +118,7 @@ function Professional(props) {
                 type="date"
                 className="form-control"
                 id="workEndDate"
-                defaultValue={i >= 0 ? data.experiences[i].org : null}
+                defaultValue={i >= 0 ? data.experiences[i].endDate : null}
               />
             </div>
           </div>

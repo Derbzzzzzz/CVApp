@@ -121,7 +121,7 @@ async function generateWordDocument(event, props){
             mimeType:
                 "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         }); //Output the document using Data-URI
-        saveAs(blob, "output.docx")
+        saveAs(blob, data.firstName + "'s Resume.docx")
 
     } catch (error) {
     console.log('Error: ' + error);

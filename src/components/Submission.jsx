@@ -14,8 +14,6 @@ function back(e, props){
 
   stateClone.page = 0
 
-  console.log(stateClone)
-
   props.stateChanger(stateClone)
 
 }

@@ -30,8 +30,26 @@ function back(event, props){
     let state = props.state
   
     let stateClone = JSON.parse(JSON.stringify(state));
+
+    let newData = stateClone.data
+
+    newData.addExp = state.data.addExp
   
     stateClone.page = 1
+  
+    props.stateChanger(stateClone)
+}
+
+function deleteExp(index, props){
+    let state = props.state
+  
+    let stateClone = JSON.parse(JSON.stringify(state));
+
+    let newData = stateClone.data
+
+    newData.addExp = state.data.addExp
+
+    newData.experiences.splice(index, 1)
   
     props.stateChanger(stateClone)
 }
@@ -45,7 +63,10 @@ function createEditExpCards(props, setExp){
                 <h5 key={index + "card-header"} className="card-header">{exp.expType + " Experience"}</h5>
                 <div key={index + "card-body"} className="card-body">
                     <h5 key={index + "card-title"} className="card-title">{exp.position + ": " + exp.org}</h5>
-                    <a key={index + "card-btn"} onClick={() => setExp(index)} href="#" className="btn btn-light">Edit</a>
+                    <div className="btn-container">
+                        <a key={index + "card-btn1"} onClick={() => setExp(index)} href="#" className="btn btn-light">Edit</a>
+                        <a key={index + "card-btn2"} onClick={() => deleteExp(index, props)} href="#" className="btn btn-danger">Delete</a>
+                    </div>
                 </div>
             </div>
     )
