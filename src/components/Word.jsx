@@ -80,7 +80,7 @@ function findExtra(experiences){
 async function generateWordDocument(event, props){
 
     try {
-        let response = await fetch("./src/assets/template.docx");
+        let response = await fetch("/template.docx");
         let tempData = await response.arrayBuffer();
         let zip = PizZip(tempData);
 
