@@ -23,14 +23,6 @@ function formSubmit(e, props) {
 
   newData.addExp(expType.value, org.value, position.value, location.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
 
-  // if (newData.firstName == null) {
-  //   stateClone.page = 0;
-  // } else if (newData.college == null) {
-  //   stateClone.page = 1;
-  // } else {
-  //   stateClone.page = 3;
-  // }
-
   props.stateChanger(stateClone);
 }
 

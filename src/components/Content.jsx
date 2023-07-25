@@ -104,8 +104,6 @@ function loadPage(state, setState){
 function Content() {
   const [state, setState] = useState(createInitialState())
 
-  console.log(state.data)
-
   return (
     <>
       <div className="content">

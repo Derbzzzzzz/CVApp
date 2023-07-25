@@ -19,7 +19,7 @@ function formatDate(date){
 function updateDates(array){
     for (let i = 0; i < array.length; i++) {
         array[i].startDate = formatDate(array[i].startDate)
-        if(array[i].endDate != null){
+        if(array[i].endDate != null & array[i].endDate != ""){
             array[i].endDate = formatDate(array[i].endDate)
         }
     }

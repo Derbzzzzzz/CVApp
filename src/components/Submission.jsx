@@ -1,18 +1,35 @@
 import "../styles/Submission.css";
 import generateWordDocument from "./Word.jsx"
 
+function back(e, props){
+  e.preventDefault();
+
+  let state = props.state;
+
+  let stateClone = JSON.parse(JSON.stringify(state));
+
+  let newData = stateClone.data
+
+  newData.addExp = state.data.addExp
+
+  stateClone.page = 0
+
+  console.log(stateClone)
+
+  props.stateChanger(stateClone)
+
+}
+
 function Submission(props) {
-  // Default export is a4 paper, portrait, using millimeters for units
   return (
     <>
       <div className="submission">
-        <h1 className="submissionMessage">Thanks for Submitting!</h1>
-        <h5>We will get back to you shortly</h5>
+        <h1 className="submissionMessage">Application Complete</h1>
         <button
-          onClick={() => window.location.reload()}
+          onClick={(e) => back(e, props)}
           className="redo btn btn-primary btn-lg"
         >
-          Apply Again?
+          Edit Application
         </button>
         <button
           onClick={(event) => generateWordDocument(event, props)}

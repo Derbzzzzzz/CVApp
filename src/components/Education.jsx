@@ -59,7 +59,7 @@ function Education(props) {
                 <h4><label className="required" htmlFor="degreeType">Degree Type</label></h4>
                 <select id="degreeType" className="form-control" defaultValue={data.degreeType} required>
                     <option label="-- Select An Option --" style={{display: 'none'}}></option>
-                    <option>{'High School or Equivalent'}</option>
+                    <option>{'High School Diploma'}</option>
                     <option>{'Associate of Arts'}</option>
                     <option>{'Associate of Science'}</option>
                     <option>{'Bachelor of Arts'}</option>
