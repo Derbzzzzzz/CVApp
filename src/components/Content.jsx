@@ -11,12 +11,12 @@ import Submission from "./Submission"
 
 function createData(){
   return{
-    // firstName: "Ryan",
-    // lastName: "Wahle",
-    // name: "Ryan Wahle",
-    // email: "ryanwahle7@gmail.com",
-    // phoneNumber: "314-882-8066",
-    // school: "University of Missouri",
+    // firstName: "John",
+    // lastName: "Doe",
+    // name: "John Doe",
+    // email: "johndoe@gmail.com",
+    // phoneNumber: "123-546-8437",
+    // school: "University of IDK",
     // degreeType: "Bachelor of Science",
     // degreeField: "Computer Science",
     // schoolStartDate: '2013-07-07',
