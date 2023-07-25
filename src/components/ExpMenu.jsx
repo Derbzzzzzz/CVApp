@@ -10,6 +10,8 @@ function formSubmit(e, props){
     let stateClone = JSON.parse(JSON.stringify(state));
 
     let newData = stateClone.data
+
+    newData.addExp = state.data.addExp
   
     if(newData.firstName == null){
       stateClone.page = 0

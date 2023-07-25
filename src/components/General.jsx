@@ -13,6 +13,9 @@ function formSubmit(e, props){
   let phoneNumber = document.getElementById("phoneNumber")
 
   let newData = stateClone.data
+
+  newData.addExp = state.data.addExp
+
   newData.firstName = fNameInput.value
   newData.lastName = lNameInput.value
   newData.name = fNameInput.value + " " + lNameInput.value
@@ -55,6 +58,7 @@ function General(props) {
 
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
+        <div className="spacer"></div>
       </div>
     </>
   )

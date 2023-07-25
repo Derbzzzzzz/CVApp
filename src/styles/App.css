@@ -8,17 +8,13 @@
     flex-direction: column;
 }
 
-@media screen and (max-height: 950px) {
+@media screen and (max-height: 900px) {
     .heading {
         padding: 1rem
     }
 
     .form-title{
         padding-bottom: 0px;
-    }
-
-    label{
-        font-size: 18px;
     }
 
     .required:after {

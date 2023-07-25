@@ -15,6 +15,10 @@ function formSubmit(e, props){
   let gpa = document.getElementById("gpa")
 
   let newData = stateClone.data
+
+  newData.addExp = state.data.addExp
+
+
   newData.school = school.value
   newData.degreeType = degreeType.value
   newData.degreeField = degreeField.value
@@ -94,7 +98,8 @@ function Education(props) {
               className="back btn btn-secondary"
             >
               Back
-          </button>
+        </button>
+        <div className="spacer"></div>
       </div>
     </>
   )

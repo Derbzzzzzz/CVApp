@@ -10,15 +10,18 @@ function formSubmit(e, props) {
   let expType = document.getElementById("expType")
   let org = document.getElementById("org");
   let position = document.getElementById("position");
+  let location = document.getElementById("location")
   let startDate = document.getElementById("workStartDate");
   let endDate = document.getElementById("workEndDate");
   let responsibilities = document.getElementById("responsibilities");
 
   let newData = stateClone.data;
 
+  console.log(state.data)
+
   newData.addExp = state.data.addExp
 
-  newData.addExp(expType.value, org.value, position.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
+  newData.addExp(expType.value, org.value, position.value, location.value, startDate.value, endDate.value, responsibilities.value, props.currExp);
 
   // if (newData.firstName == null) {
   //   stateClone.page = 0;
@@ -68,21 +71,39 @@ function Professional(props) {
               required
             />
           </div>
-          <div className="form-group">
-            <h4>
-              <label className="required" htmlFor="position">
-                Position
-              </label>
-            </h4>
-            <input
-              type="text"
-              className="form-control"
-              id="position"
-              placeholder="Position Title"
-              defaultValue={i >= 0 ? data.experiences[i].position : null}
-              autoComplete="off"
-              required
-            />
+          <div className="row">
+            <div className="form-group col-md-6">
+              <h4>
+                <label className="required" htmlFor="position">
+                  Position
+                </label>
+              </h4>
+              <input
+                type="text"
+                className="form-control"
+                id="position"
+                placeholder="Position Title"
+                defaultValue={i >= 0 ? data.experiences[i].position : null}
+                autoComplete="off"
+                required
+              />
+            </div>
+            <div className="form-group col-md-6">
+              <h4>
+                <label className="required" htmlFor="location">
+                  Location
+                </label>
+              </h4>
+              <input
+                type="text"
+                className="form-control"
+                id="location"
+                placeholder="Ex: Saint Louis, MO"
+                defaultValue={i >= 0 ? data.experiences[i].location : null}
+                autoComplete="off"
+                required
+              />
+            </div>
           </div>
           <div className="row">
             <div className="form-group col-md-6">
@@ -137,6 +158,7 @@ function Professional(props) {
         >
           Back
         </button>
+        <div className="spacer"></div>
       </div>
     </>
   );
