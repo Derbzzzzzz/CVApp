@@ -49,7 +49,7 @@ function createData(){
       position: "Server",
       startDate: "2022-10-07",
       endDate: null,
-      responsibilities: "Wait on people",
+      responsibilities: "Waited on people\nHelped others\nAte food",
     }, 
     ],
     addExp(expType, org, position, startDate, endDate, responsibilities, index = -1){

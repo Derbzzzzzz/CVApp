@@ -23,8 +23,18 @@ function updateDates(array){
             array[i].endDate = formatDate(array[i].endDate)
         }
     }
+    
 
     return array
+}
+
+function updateResponibilities(array){
+    for (let i = 0; i < array.length; i++) {
+        array[i].responsibilities = (array[i].responsibilities).split("\n")
+    }
+
+    return array
+
 }
 
 function findWork(experiences){
@@ -34,6 +44,8 @@ function findWork(experiences){
             ret.push(JSON.parse(JSON.stringify(experiences[i])))
         }
     }
+
+    ret = updateResponibilities(ret)
 
     return updateDates(ret)
 }
@@ -46,6 +58,8 @@ function findVolunteer(experiences){
         }
     }
 
+    ret = updateResponibilities(ret)
+
     return updateDates(ret)
 }
 
@@ -56,6 +70,8 @@ function findExtra(experiences){
             ret.push(JSON.parse(JSON.stringify(experiences[i])))
         }
     }
+
+    ret = updateResponibilities(ret)
 
     return updateDates(ret)
 }
@@ -75,8 +91,6 @@ async function generateWordDocument(event, props){
         })
 
         let data = props.state.data
-
-        let ret = findWork(data.experiences)
 
         
 

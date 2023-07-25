@@ -114,13 +114,14 @@ function Professional(props) {
           <div className="form-group">
             <h4>
               <label className="required" htmlFor="responsibilities">
-                Responsibilities
+                Responsibilities (Hit ENTER after each one)
               </label>
             </h4>
             <textarea
               className="form-control"
               id="responsibilities"
               rows="2"
+              placeholder='Responsibility #1&#10;Responsibility #2&#10;Responsibility #3'
               defaultValue={i >= 0 ? data.experiences[i].responsibilities : null}
               required
             ></textarea>
