@@ -19,7 +19,6 @@ function createData(){
     // school: "University of IDK",
     // degreeType: "Bachelor of Science",
     // degreeField: "Computer Science",
-    // schoolStartDate: '2013-07-07',
     // schoolEndDate: '2018-09-09',
     // gpa: "3.7/4.0",
     // experiences: [{
@@ -64,7 +63,6 @@ function createData(){
     school: null,
     degreeType: null,
     degreeField: null,
-    schoolStartDate: null,
     schoolEndDate: null,
     gpa: null,
     experiences: [],

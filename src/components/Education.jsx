@@ -10,7 +10,6 @@ function formSubmit(e, props){
   let school = document.getElementById("school")
   let degreeType = document.getElementById("degreeType")
   let degreeField = document.getElementById("degreeField")
-  let startDate = document.getElementById("startDate")
   let endDate = document.getElementById("endDate")
   let gpa = document.getElementById("gpa")
 
@@ -21,7 +20,6 @@ function formSubmit(e, props){
   newData.school = school.value
   newData.degreeType = degreeType.value
   newData.degreeField = degreeField.value
-  newData.schoolStartDate = startDate.value
   newData.schoolEndDate = endDate.value
   newData.gpa = gpa.value
 
@@ -59,42 +57,38 @@ function Education(props) {
                 <h4><label className="required" htmlFor="school">School</label></h4>
                 <input type="text" className="form-control" id="school" placeholder="School Name" defaultValue={data.school} autoComplete="off" required/>
             </div>
-            <div className="form-group">
-                <h4><label className="required" htmlFor="degreeType">Degree Type</label></h4>
-                <select id="degreeType" className="form-control" defaultValue={data.degreeType} required>
-                    <option label="-- Select An Option --" style={{display: 'none'}}></option>
-                    <option>{'High School Diploma'}</option>
-                    <option>{'Associate of Arts'}</option>
-                    <option>{'Associate of Science'}</option>
-                    <option>{'Bachelor of Arts'}</option>
-                    <option>{'Bachelor of Science'}</option>
-                    <option>{'Bachelor of Fine Arts'}</option>
-                    <option>{'Bachelor of Architecture'}</option>
-                    <option>{'Master of Arts'}</option>
-                    <option>{'Master of Science'}</option>
-                    <option>{'Master of Fine Arts'}</option>
-                    <option>{'Master of Business Administration'}</option>
-                    <option>{'Doctorate'}</option>
-                </select>
-            </div>
-            <div className="form-group">
-                <h4><label htmlFor="degreeField">Degree Field (Optional)</label></h4>
-                <input type="text" className="form-control" id="degreeField" placeholder="Ex: Computer Science" defaultValue={data.degreeField} autoComplete="off"/>
+            <div className="row">
+              <div className="form-group col-md-6">
+                  <h4><label className="required" htmlFor="degreeType">Degree Type</label></h4>
+                  <select id="degreeType" className="form-control" defaultValue={data.degreeType} required>
+                      <option label="-- Select An Option --" style={{display: 'none'}}></option>
+                      <option>{'High School Diploma'}</option>
+                      <option>{'Associate of Arts'}</option>
+                      <option>{'Associate of Science'}</option>
+                      <option>{'Bachelor of Arts'}</option>
+                      <option>{'Bachelor of Science'}</option>
+                      <option>{'Bachelor of Fine Arts'}</option>
+                      <option>{'Bachelor of Architecture'}</option>
+                      <option>{'Master of Arts'}</option>
+                      <option>{'Master of Science'}</option>
+                      <option>{'Master of Fine Arts'}</option>
+                      <option>{'Master of Business Administration'}</option>
+                      <option>{'Doctorate'}</option>
+                  </select>
+              </div>
+              <div className="form-group col-md-6">
+                  <h4><label htmlFor="degreeField">Degree Field (Optional)</label></h4>
+                  <input type="text" className="form-control" id="degreeField" placeholder="Ex: Computer Science" defaultValue={data.degreeField} autoComplete="off"/>
+              </div>
             </div>
             <div className="form-group">
                 <h4><label htmlFor="gpa">GPA (Optional)</label></h4>
                 <input type="text" className="form-control" id="gpa" placeholder="Ex: 3.2/4.0" defaultValue={data.gpa} autoComplete="off"/>
             </div>
-            <div className="row">
-                <div className="form-group col-md-6">
-                    <h4><label className="required" htmlFor="startDate">Start Date</label></h4>
-                    <input type="date" className="form-control" id="startDate" defaultValue={data.schoolStartDate} required/>
-                </div>
-                <div className="form-group col-md-6">
-                    <h4><label className="required" htmlFor="endDate">End Date (Expected)</label></h4>
-                    <input type="date" className="form-control" id="endDate" defaultValue={data.schoolEndDate} required/>
-                </div>
-            </div>
+              <div className="form-group">
+                  <h4><label className="required" htmlFor="endDate">End Date (Expected)</label></h4>
+                  <input type="date" className="form-control" id="endDate" defaultValue={data.schoolEndDate} required/>
+              </div>
             <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         <button
