@@ -2,7 +2,7 @@ import "../styles/Sidebar.css"
 
 function addSections(items, state, stateChanger){
     const elements = items.map((item, index) =>
-    <li key={item} className={state.page === index ? "list-group-item active" : "list-group-item"} onClick={() => stateChanger(updatePage(index, state))}>{item}</li>
+    <a key={item} className={state.page === index ? "list-group-item active list-group-item-action" : "list-group-item list-group-item-action"} onClick={() => stateChanger(updatePage(index, state))}>{item}</a>
     );
 
     return elements
@@ -27,9 +27,9 @@ function SideBar(props) {
     return (
         <>
             <div className="sidebar">
-            <ul className="list-group list-group-flush">
+            <div className="list-group list-group-flush">
                 {addSections(items, props.state, props.stateChanger)}
-            </ul>
+            </div>
             </div>
         </>
     )
