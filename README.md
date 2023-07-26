@@ -1,8 +1,8 @@
-# CVApp
+# ResumeBuilder
 
 ## General Info
 
-Created using ReactJS, Bootstrap, and docxtemplater, CVApp is a resume builder app that will generate a resume based on form inputs.
+Created using ReactJS, Bootstrap, and docxtemplater, ResumeBuilder is a resume creation app that will generate a resume based on form inputs.
 
 ## Project Idea
 
