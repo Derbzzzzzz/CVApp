@@ -2,11 +2,7 @@ import "../styles/Content.css"
 import { useState } from 'react'
 
 import SideBar from "./Sidebar"
-import General from "./General"
-import Education from "./Education"
-import ExpMenu from "./ExpMenu"
-import Professional from "./Professional"
-import Submission from "./Submission"
+import FadePage from "./FadePage"
 
 
 function createData(){
@@ -94,22 +90,6 @@ function createInitialState(){
   }
 }
 
-function loadPage(state, setState){
-  if(state.page === 0){
-    return <General state={state} stateChanger={setState}/>
-  }
-  else if(state.page === 1){
-    return <Education state={state} stateChanger={setState}/>
-  }
-  else if(state.page === 2){
-    return <ExpMenu state={state} stateChanger={setState}/>
-  }
-  else if(state.page === 3){
-    return <Submission state={state} stateChanger={setState}/>
-  }
-  
-}
-
 function Content() {
   const [state, setState] = useState(createInitialState())
 
@@ -117,7 +97,7 @@ function Content() {
     <>
       <div className="content">
         {state.page !== 3 && <SideBar state={state} stateChanger={setState}/>}
-        {loadPage(state, setState)}
+        <FadePage state={state} stateChanger={setState}/>
       </div>
     </>
   )

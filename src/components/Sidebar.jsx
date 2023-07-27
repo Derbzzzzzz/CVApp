@@ -16,8 +16,6 @@ function updatePage(page, state){
 
     newData.addExp = state.data.addExp
 
-
-
     return stateClone
 }
 
