@@ -10,7 +10,7 @@ This project idea was from the Odin Project's Full Stack JS course that is free 
 
 ## Deployment
 
-ResumeBuilder is deployed through Netlify and is hosted at https://derbzzzzzz-cvapp.netlify.app currently.
+ResumeBuilder is deployed through Netlify and is hosted [here](https://derbzzzzzz-cvapp.netlify.app).
 
 ## docxtemplater
 
